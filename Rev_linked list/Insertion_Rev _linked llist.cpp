@@ -80,54 +80,6 @@ struct node* insert_At_User_Given_Val(struct node *head,int chg,int new_val){
 	}
 	return head;
 }
-// deletion ->
-//case 1:
-struct node* deleteAtFirst(struct node *head){
-	struct node *p=head;
-	head = head -> next;
-	head -> prev = NULL;
-	free(p);
-	
-	return head; 
-}
-// case 2 :
-struct node* deleteAtEnd(struct node *head){
-	struct node *p=head;
-	struct node *q=head->next;
-	
-	while(q -> next != NULL){
-		p = p->next;
-		q = q->next;
-	}
-	p -> next = NULL;
-	free(q);
-	return head;
-}
-
-// case 3 :
-struct node* deleteAtIndex(struct node *head,int index){
-	struct node *p=head;
-	int i=0;
-	
-	while(i != index-1){
-		p = p -> next;
-		i++;
-	}
-	struct node *q = head->next;
-	struct node *n = q->next;
-	p -> next = n;
-	n -> prev = p;
-	free(q);
-	return head;
-}
-
-void linkedlistTraversal(struct node *head){
-	
-	while(head != NULL){
-		printf("Elements :: %d\n",head -> data);
-		head = head -> next;
-	}
-}
 
 void Rev_Traversal(struct node *head){
 	struct node *p=head;
@@ -167,7 +119,7 @@ int main(){
 	third -> data = num3;
 	third -> prev = second;
 	third -> next = NULL;
-	
+
 	//linkedlistTraversal(head);
 	//head=insertAtFirst(head,53);
 	//head=insertAtEnd(head,76);
@@ -175,11 +127,5 @@ int main(){
 	//head=insertAtIndex(head,70,0);
 	//head=insert_At_User_Given_Val(head,10,22);
 	
-	//head=deleteAtFirst(head);
-	//head=deleteAtEnd(head);
-	head=deleteAtIndex(head,2);
-	linkedlistTraversal(head);
-	
-	printf("\nAfter reverse ::");
 	Rev_Traversal(head);
 }

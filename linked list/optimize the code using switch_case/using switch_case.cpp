@@ -5,6 +5,7 @@ struct node{
 	int data;
 	struct node *next;
 };
+// insertion :: 
 
 // case 1: insert at the beginning
 struct node* insertAtFirst(struct node *head,int val){
@@ -50,7 +51,7 @@ struct node* insertAtEnd(struct node *head,int val){
 	return head;
 }
 
-//case 4 : Insertion element at the next postion of user given value
+//case 4: Insertion element at the next postion of user given value
 struct node* insertUserVal(struct node *head,int chg,int new_val){	
 	
 	struct node *p = head; 	
@@ -70,7 +71,9 @@ struct node* insertUserVal(struct node *head,int chg,int new_val){
 	return head;
 }
 
- // case 1: Deleting the first element from the linked list
+ // deletion::
+
+ // case 5: Deleting the first node from the linked list
 struct node* deleteAtFirst(struct node *head){
 	struct node *p=head;
 	head = head -> next;
@@ -80,7 +83,7 @@ struct node* deleteAtFirst(struct node *head){
 	return head; 
 }
 
-// case 2 : Deletion at at the index position
+// case 6: Deletion  at the index position
 struct node* deleteAtIndex(struct node *head,int index){
 	struct node *p=head;
 	struct node *q=head->next;
@@ -111,7 +114,7 @@ struct node* deleteAtIndex(struct node *head,int index){
 	return head;
 }
 
-// case 3:
+// case 7: deletionn at the end
 struct node* deleteAtEnd(struct node *head){
 	struct node *p=head;
 	struct node *q=head->next;
@@ -126,7 +129,7 @@ struct node* deleteAtEnd(struct node *head){
 	return head;
 }
 
-//case 4:
+//case 8: delete the element with a given value 
 struct node* deleteAtUserval(struct node *head, int val){
 	struct node *p=head;
 	struct node *q=head->next;
@@ -142,6 +145,8 @@ struct node* deleteAtUserval(struct node *head, int val){
 	}
 	return head;
 }
+
+// case 9: Traverse 
 void linkedlistTraversal(struct node *head){
 	
 	while(head != NULL){
@@ -176,16 +181,17 @@ int main(){
 	printf("\nBefore insertion or deletion :: \n");
 	linkedlistTraversal(head);
 	
-	printf("\n1. Traversal :: \n");
-	printf("2. Insert at the Beginning :: \n");
-	printf("3. Insert at specific position :: \n");
-	printf("4. Insert element at the End :: \n");
-	printf("5. Insert after the Value ::\n\n");
-	printf("6. Delete the first node :: \n");
-	printf("7. Delete at specific position ::\n");
-	printf("8. Delete the End node :: \n");
-	printf("9. Delete the element with a given value ::\n");
-	printf("10. Exit ::");
+	a:
+	printf("\n1. Insert at the Beginning :: \n");
+	printf("2. Insert at specific position :: \n");
+	printf("3. Insert element at the End :: \n");
+	printf("4. Insert after the Value ::\n");
+	printf("5. Delete the first node :: \n");
+	printf("6. Delete at specific position ::\n");
+	printf("7. Delete the End node :: \n");
+	printf("8. Delete the element with a given value ::\n");
+	printf("\n9. Traverse/View list :: \n");
+	printf("10. Exit ::\n");
 	
 	while(1){
 		printf("\nEnter your choice :: ");
@@ -193,16 +199,13 @@ int main(){
 		scanf("%d",&num);
 		
 		switch(num){
-			case 1 : printf("\nAfter :: \n");
-					 linkedlistTraversal(head);
-					 break;
-					 
-			case 2 : printf("Enter the value  :: ");
+							 
+			case 1 : printf("Enter the value  :: ");
 					 scanf("%d",&num);
 					 head=insertAtFirst(head,num);
 					 break;
 					 
-			case 3 : printf("Enter the Index_pos :: ");
+			case 2 : printf("Enter the Index_pos :: ");
 					 int ind;
 					 scanf("%d",&ind);
 					  
@@ -211,12 +214,12 @@ int main(){
 					 head=insertAtIndex(head,num,ind);
 					 break;
 					 
-			case 4 : printf("Enter the value  :: ");
+			case 3 : printf("Enter the value  :: ");
 					 scanf("%d",&num); 
 					 head=insertAtEnd(head,num);
 					 break;
 					 
-			case 5 : printf("Enter the value which is present in the linked list :: ");
+			case 4 : printf("Enter the value which is present in the linked list :: ");
 					 scanf("%d",&num);
 	
 				     printf("Enter the new value  :: ");
@@ -225,27 +228,32 @@ int main(){
 					 head=insertUserVal(head,num,new_val);
 					 break;
 					 
-			case 6 : head=deleteAtFirst(head);
+			case 5 : head=deleteAtFirst(head);
 					 break;
 			
-			case 7 : printf("Enter the index_position ::");
+			case 6 : printf("Enter the index_position ::");
 					 int index;
 					 scanf("%d",&index);
 					 head=deleteAtIndex(head,index);
 					 break;
 					 
-			case 8 : head=deleteAtEnd(head);
+			case 7 : head=deleteAtEnd(head);
 					 break;
 			
-			case 9 : printf("Enter the value ::");
+			case 8 : printf("Enter the value ::");
 					 int u_val;
 					 scanf("%d",&u_val);
 					 head=deleteAtUserval(head,u_val);
 					 break;
 					 
+			case 9 : printf("\nTraverse :: \n");
+					 linkedlistTraversal(head);
+					 break;
+			
 			case 10 : exit(0);
 					 	
-			default : printf("Invalid choice ...");
+			default : printf("\n\tInvalid choice ...\n");
+			goto a;
 		}
 	}
     return 0;
