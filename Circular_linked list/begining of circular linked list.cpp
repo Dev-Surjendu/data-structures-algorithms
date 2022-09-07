@@ -8,17 +8,20 @@ struct node{
 
 void linkedlistTraversal(struct node *head){
 	
-	while(head != NULL){
-		printf("Elements :: %d\n",head -> data);
-		head = head -> next;
+	struct node *p=head;	
+
+	while(p ->next != head){
+		printf("Element :: %d\n",p -> data);
+		p = p -> next;
 	}
-	
+	printf("Element :: %d",p -> data);	
+
 	/*	Output will be same
-	while(head ->next != NULL){
-		printf("%d\n",head -> data);
-		head = head -> next;
-	}
-	printf("%d",head -> data);*/	
+	do{
+		printf("Element : %d\n",p -> data);
+		p = p -> next;
+	}while(p ->next != head);*/
+
 }
 
 int main(){
@@ -33,21 +36,17 @@ int main(){
 	third  = (struct node*)malloc(sizeof(struct node));
 	fourth = (struct node*)malloc(sizeof(struct node));	
 	
-	// link fist and second node
 	head -> data = 7;
 	head -> next = second;
 	
-	// link second and third node
 	second -> data = 3;
 	second -> next = third;
 	
-	// link third and fourth node
 	third -> data = 9;
 	third -> next = fourth;
 	
-	// Terminate the list at the forth node
 	fourth -> data = 8;
-	fourth -> next = NULL;
+	fourth -> next = head;
 	
 	linkedlistTraversal(head);
 	

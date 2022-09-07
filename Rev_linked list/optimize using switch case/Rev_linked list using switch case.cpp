@@ -95,6 +95,7 @@ struct node* deleteAtFirst(struct node *head){
 	struct node *p=head;
 	head = head -> next;
 	head -> prev = NULL;
+	printf("\nDeleting %d element from the linked list.\n",p->data);
 	free(p);
 	
 	return head; 
@@ -113,6 +114,7 @@ struct node* deleteAtIndex(struct node *head,int index){
 	struct node *n = q->next;
 	p -> next = n;
 	n -> prev = p;
+	printf("\nDeleting %d element from the linked list.\n",q->data);
 	free(q);
 	
 	return head;
@@ -128,6 +130,7 @@ struct node* deleteAtEnd(struct node *head){
 		q = q->next;
 	}
 	p -> next = NULL;
+	printf("\nDeleting %d element from the linked list.\n",q->data);
 	free(q);
 	
 	return head;
@@ -231,7 +234,7 @@ int main(){
 					 head=insertAtFirst(head,num);
 					 break;
 					 
-			case 2 : printf("Enter the Index_pos (Except first or last pos) :: ");
+			case 2 : printf("Enter the Index_pos (Except last pos) :: ");
 					 int ind;
 					 scanf("%d",&ind);
 					  

@@ -51,21 +51,21 @@ struct node* insertAtEnd(struct node *head,int val){
 }
 
 //case 4 : Isertion element at the next postion of user given value
-struct node* insertUserIndex(struct node *head,int chg,int new_val){	
+struct node* insertUserVal(struct node *head,int pre_val,int new_val){	
 	
 	struct node *p = head; 	
 	struct node *ptr = (struct node*)malloc(sizeof(struct node));
 	ptr -> data = new_val;
 	
-	while(p -> data != chg && p -> next != NULL ){
+	while(p -> data != pre_val && p -> next != NULL ){
 		p = p -> next;
 	}
-	if(p -> data == chg ){ // here,if we did not given the if  statement then at the end position the insertion will be peformed 
+	if(p -> data == pre_val ){ // here,if we did not given the if  statement then at the end position the insertion will be peformed 
 		ptr -> next = p -> next;
 		p -> next = ptr;
 	}
 	else{
-		printf("\nwrong choice..\n");
+		printf("\nInvalid choice..\n");
 	}
 	return head;
 }
@@ -113,7 +113,7 @@ int main(){
 	//head=insertAtFirst(head,53);
 	//head=insertAtEnd(head,76);
 	//head=insertAtIndex(head,70,2);
-	head=insertUserVal(head,5,22);
+	head=insertUserVal(head,9,22);
 	printf("\nAfter insertion :: \n");
 	linkedlistTraversal(head);
 	
