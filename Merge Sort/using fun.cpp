@@ -8,25 +8,17 @@ void MergeSort(int arr1[],int arr2[],int num1,int num2){
 	
 	while(i<num1 && j<num2){
 		if(arr1[i]<arr2[j]){
-			merge_sort[k]=arr1[i];
-			i++;
-			k++;
+			merge_sort[k++]=arr1[i++];
 		}
 		else{
-			merge_sort[k]=arr2[j];
-			j++;
-			k++;
+			merge_sort[k++]=arr2[j++];
 		}	
 	}
 	while(i<num1){
-		merge_sort[k]=arr1[i];
-		i++;
-		k++;
+		merge_sort[k++]=arr1[i++];
 	}
 	while(j<num2){
-		merge_sort[k]=arr2[j];		
-		j++;
-		k++;
+		merge_sort[k++]=arr2[j++];		
 	}
 	printf("\nAfter sorting array elements are :->\n");
 	for(int i=0; i<size; i++){
