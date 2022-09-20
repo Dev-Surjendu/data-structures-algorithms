@@ -45,7 +45,7 @@ int main(){
 		printf("Enter %dno -> ",i+1);
 		scanf("%d",&arr1[i]);
 	}
-	
+	// sorting 1st array
 	int temp;
 	for(int i=0; i<num1-1; i++){
 		for(int j=i+1; j<num1; j++){
@@ -68,7 +68,7 @@ int main(){
 		printf("Enter %dno -> ",i+1);
 		scanf("%d",&arr2[i]);
 	}
-	
+	// sorting 2nd array
 	int sort;
 	for(int i=0; i<num2-1; i++){
 		for(int j=i+1; j<num2; j++){
