@@ -31,7 +31,7 @@ int main(){
 	printf(" Group    Frequency");
 	for(int i=min_fin; i<=max_fin; i+=10){
 		int start = i;
-		int end = i+10;
+		int end = i+9;
 		
 		for(j=0; j<size; j++){
 			if(arr[j]>=start && arr[j]<=end){

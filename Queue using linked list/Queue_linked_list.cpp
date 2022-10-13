@@ -37,7 +37,7 @@ void dequeue(){
 		printf("\nQueue is Empty\n");
 	}
 	else if(front == rear){
-		printf("\nDeleting %d element from the linked list.\nDeleting element %d",p->data);
+		printf("\nDeleting %d element from the linked list",p->data);
 		front=rear=NULL;
 	}
 	else{

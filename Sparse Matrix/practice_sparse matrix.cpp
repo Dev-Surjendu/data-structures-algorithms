@@ -58,7 +58,7 @@ int main(){
 	}
  	}
 	else{
-		printf("\n\nThis matrix is not sparse matrix..\nPlease enter correct elements ::\n\n");
+		printf("\n\nThis matrix is not a sparse matrix..\nPlease enter correct elements ::\n\n");
  		goto a;
 	}
 	return 0;

@@ -5,7 +5,7 @@ struct node {
 	int data;
 	struct node* next;
 };
-struct node* head;
+struct node* head=NULL;
 
 void linkedlistTraversal(){
 	struct node* p=head;
