@@ -22,7 +22,6 @@ int main(){
 		else if(arr[i]>max)
 			max=arr[i];
 	}
-	printf("%d %d\n",max,min);
 	
 	int min_fin = min-(min%10);
 	int max_fin = (max-(max%10))+10;

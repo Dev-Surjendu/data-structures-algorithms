@@ -98,9 +98,8 @@ void deleteAtIndex(){
 	scanf("%d",&index);
 	
 	if(index == 0 ){
-		head = head -> next;
 		printf("\nDeleting %d element from the linked list.\n",p->data);
-		head=0;
+		head = head -> next;
 	} 
 	else{
 		int i=0;
@@ -113,11 +112,12 @@ void deleteAtIndex(){
 		if(i == index-1){
 			if(q->next == NULL){
 				printf("\nDeleting %d element from the linked list.\n",q->data);
-				p->next = NULL;
+				p -> next = NULL;
 				free(q);
 			}
 			else{
 				printf("\nDeleting %d element from the linked list.\n",q->data);
+				p -> next = q -> next;
 				free(q);
 			}	
 		}
@@ -167,10 +167,11 @@ void linkedlistTraversal(){
 	}
 	else{
 	printf("\nTraverse :: \n");
-		while(p != NULL){
+		while(p->next != NULL){
 			printf("\nElement :: %d",p->data);
 			p=p->next;
 		}
+		printf("\nElement :: %d",p->data);
 	}
 }
 int main(){

@@ -39,7 +39,7 @@ void display(){
 	}
 	else{
 		struct node* p=top;
-		printf("\nElemnent present in the linked_list ::\n");
+		printf("\nElemnent present in the Stack ::\n");
 		while(p != NULL){
 			printf("\nElement :: %d",p->data);
 			p=p->next;

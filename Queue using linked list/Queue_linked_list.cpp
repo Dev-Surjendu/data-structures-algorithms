@@ -53,7 +53,7 @@ void display(){
 	}
 	else{
 		struct node* p=front;
-		printf("\nElemnent present in the linked_list ::\n");
+		printf("\nElemnent present in the stack ::\n");
 	
 		while(p != rear){
 			printf("\nElement :: %d",p->data);

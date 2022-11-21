@@ -99,10 +99,10 @@ void display(){
 }
 
 int main(){
-	printf("1. Insertion from Rear :: \n");
-	printf("2. Insertion from Front \n");
-	printf("3. Deletion from Front  ::\n");
-	printf("4. Deletion from Rear  ::\n");
+	printf("1. Insertion from Rear  :: \n");
+	printf("2. Insertion from Front :: \n");
+	printf("3. Deletion from Front  :: \n");
+	printf("4. Deletion from Rear   :: \n");
 	printf("5. Display ::\n");
 	printf("6. Exit ::\n");
 	
