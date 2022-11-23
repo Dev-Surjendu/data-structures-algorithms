@@ -38,15 +38,19 @@ int main(){
 			}
 		}
 	}
+	printf("\nSorting the array ::\n");
+	for(int i=0; i<num; i++){
+		printf("%d ",arr[i]);	
+	}
 	a:
-	printf("\nEnter element to search :: ");
+	printf("\n\nEnter element to search :: ");
 	int val;
 	scanf("%d",&val);
 
 	int search = binary_Search(arr,num,val);
 	
 	if(search == 0){
-		printf("\nElement not found\n");
+		printf("Element not found\n");
 		goto a;
 	}
 	else{

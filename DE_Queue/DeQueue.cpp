@@ -1,22 +1,26 @@
+///  WRONG PROGRAM
 #include<stdio.h>
 #include<stdlib.h>
 #define n 5
-int front=-1;
+
+int front =-1;
 int rear =-1;
 int Queue[n];
 
 int isFull(){
-	if(rear == n)
+	if(rear == n || front == n)
 		return 1;
 	else 
 		return 0;
 }
+
 int isEmpty(){
 	if(front == -1 && rear ==-1)
 		return 1;
 	else 
 		return 0;		
 }
+// case 1
 void enqueue_rear(){
 	if(isFull()){
 		printf("Queue is full\n");
@@ -35,26 +39,25 @@ void enqueue_rear(){
 		}
 	}
 }
+// case 2
 void enqueue_front(){
-	
-	printf("Enter the value ::");
-	int val;
-	scanf("%d",&val);
+	if(isFull()){
+		printf("Queue is full\n");
+	}else{
+		printf("Enter the value ::");
+		int val;
+		scanf("%d",&val);
 		
-	if(front == -1 && rear == -1){
+		if(front == -1 && rear == -1){
 			front=rear=0;
-			Queue[front]=val;
-			rear++;
-	}
-	else{
-		if(front>0){
-			Queue[--front]=val;
-		}
-		else{
-			printf("Queue is full\n");
+			Queue[front++]=val;
+		//	front++;
+		}else if(front>0){
+			Queue[++front]=val;	
 		}	
 	}
 }
+//case 3
 void dequeue_front(){
 	if(isEmpty()){
 		printf("Queue is Empty\n");
@@ -67,6 +70,7 @@ void dequeue_front(){
 		printf("\nDeleting element %d\n",Queue[front++]);
 	}
 }
+// case 4
 void dequeue_rear(){
 		if(isEmpty()){
 		printf("Queue is Empty\n");
@@ -79,6 +83,7 @@ void dequeue_rear(){
 		printf("\nDeleting element %d\n",Queue[--rear]);
 	}
 }
+// case 5
 void display(){
 	if(isEmpty()){
 		printf("Queue is Empty\n");
@@ -91,7 +96,7 @@ void display(){
 			}
 		}
 		else{
-			for(int i=front; i<=rear; i++){
+			for(int i=front; i<=rear i++){
 				printf("%d ",Queue[i]);
 			}
 		}
@@ -103,8 +108,8 @@ int main(){
 	printf("2. Insertion from Front :: \n");
 	printf("3. Deletion from Front  :: \n");
 	printf("4. Deletion from Rear   :: \n");
-	printf("5. Display ::\n");
-	printf("6. Exit ::\n");
+	printf("5. Display :: \n");
+	printf("6. Exit :: \n");
 	
 	while(1){
 		a:

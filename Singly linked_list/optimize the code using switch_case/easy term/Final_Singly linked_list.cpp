@@ -6,6 +6,7 @@ struct node {
 	struct node* next;
 };
 struct node* head=NULL;
+// Insertion ::->>>
 
 // case 1: insert at the beginning
 void insertAtFirst(){
@@ -78,7 +79,7 @@ void insertUserVal(){
 		printf("\nInvalid choice..\n");
 	}
 }
-// deletion::
+// deletion ::->>>
  
 // case 5: Deleting the first node from the linked list
 void deleteAtFirst(){
@@ -198,7 +199,7 @@ int main(){
 	printf("6. Delete at specific position ::\n");
 	printf("7. Delete the End node :: \n");
 	printf("8. Delete the element with a given value ::\n");
-	printf("\n9. Traverse/View list :: \n");
+	printf("9. Traverse/View list :: \n");
 	printf("10. Exit ::\n");
 	
 	while(1){
